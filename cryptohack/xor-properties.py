@@ -1,1 +1,11 @@
-KEY1 = "a6c8b6733c9b22de7bc0253266a3867df55acde8635e19c73313"
+import itertools
+
+KEY1 = bytes.fromhex("a6c8b6733c9b22de7bc0253266a3867df55acde8635e19c73313")
+KEY2KEY3 = bytes.fromhex("c1545756687e7573db23aa1c3452a098b71a7fbf0fddddde5fc1")
+RESULT = bytes.fromhex("04ee9855208a2cd59091d04767ae47963170d1660df7f56f5faf")
+
+keys_xor = bytes([_a ^ _b for _a, _b in zip(KEY1, KEY2KEY3)])
+
+flag = bytes([_a ^ _b for _a, _b in zip(keys_xor, RESULT)])
+
+print(flag)
