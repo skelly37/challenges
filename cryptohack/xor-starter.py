@@ -1,11 +1,7 @@
 text = "label"
-result = []
+output = ""
 
 for c in text:
-	result.append(ord(c)^13)
-
-output = ""
-for c in result:
-	output += chr(c)
+	output += chr(ord(c)^13)
 
 print(output)
